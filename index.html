@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For Vo Thuy Ha ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Premium soft pink gradient */
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            font-family: 'Quicksand', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bg-heart {
+            position: absolute;
+            color: #ff8fa3;
+            opacity: 0;
+            animation: float-up 8s linear infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes float-up {
+            0% { transform: translateY(100vh) rotate(0deg) scale(0.5); opacity: 0; }
+            20% { opacity: 0.5; }
+            80% { opacity: 0.5; }
+            100% { transform: translateY(-20vh) rotate(360deg) scale(1.5); opacity: 0; }
+        }
+
+        #envelope-wrapper {
+            position: relative;
+            z-index: 10;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-align: center;
+            animation: float-envelope 3s ease-in-out infinite;
+            padding: 20px;
+        }
+        
+        #envelope-wrapper:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes float-envelope {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .envelope-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: #c9184a;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+            animation: pulse-text 2s infinite;
+        }
+
+        @keyframes pulse-text {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .envelope-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 12px;
+            object-fit: cover;
+            border: 3px solid #fff;
+            filter: drop-shadow(0 15px 25px rgba(201, 24, 74, 0.2));
+        }
+
+        /* Glassmorphism Card */
+        .card-container {
+            display: none;
+            position: relative;
+            width: 92%;
+            max-width: 420px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 30px;
+            padding: 30px 20px;
+            box-shadow: 0 20px 50px rgba(201, 24, 74, 0.15), inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+            text-align: center;
+            z-index: 10;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .card-container::-webkit-scrollbar { width: 5px; }
+        .card-container::-webkit-scrollbar-thumb { background-color: #ffb3c1; border-radius: 10px; }
+
+        .cute-gif {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: -50px auto 10px;
+            display: block;
+            background: white;
+            padding: 5px;
+            box-shadow: 0 8px 25px rgba(255, 77, 109, 0.25);
+            border: 3px solid #fff;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            margin: 5px 0 10px 0;
+            line-height: 1.2;
+            /* Gradient Text */
+            background: linear-gradient(45deg, #ff0844 0%, #ffb199 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 4px 15px rgba(255, 8, 68, 0.1);
+        }
+
+        h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff4d6d;
+            font-size: 1.8rem;
+            margin: 0 0 15px 0;
+        }
+
+        p {
+            color: #590d22;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            padding: 0 5px;
+        }
+
+        .details-box {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            padding: 15px;
+            margin: 20px 5px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 5px 15px rgba(201, 24, 74, 0.05);
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 8px 0;
+            color: #800f2f;
+            font-size: 1.05rem;
+        }
+
+        .icon {
+            font-size: 1.3rem;
+            margin-right: 8px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 25px;
+            height: 50px;
+            position: relative;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            font-family: 'Quicksand', sans-serif;
+            transition: transform 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+
+        .btn-yes {
+            background: linear-gradient(45deg, #ff4d6d, #c9184a);
+            color: white;
+            box-shadow: 0 5px 15px rgba(201, 24, 74, 0.3);
+            z-index: 2;
+            flex-grow: 1;
+            max-width: 180px;
+        }
+
+        .btn-yes:active {
+            transform: scale(0.95);
+        }
+
+        .btn-no {
+            background: #fff;
+            color: #590d22;
+            border: 2px solid #ffccd5;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
+            max-width: 120px;
+        }
+
+        #love-letter-section {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 143, 163, 0.4);
+            animation: fade-in-up 1s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            box-shadow: 0 10px 25px rgba(201, 24, 74, 0.1);
+        }
+
+        .love-letter-text {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #590d22;
+            text-align: justify;
+            font-style: italic;
+        }
+
+        @keyframes fade-in-up {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #c9184a;
+            margin-top: 20px;
+            text-align: right;
+            transform: rotate(-3deg);
+            padding-right: 10px;
+        }
+
+        #confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .music-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(201, 24, 74, 0.15);
+            z-index: 100;
+            display: none;
+            backdrop-filter: blur(5px);
+        }
+        
+        .spin {
+            animation: spin 3s linear infinite;
+        }
+        
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+    </style>
+</head>
+<body>
+
+    <audio id="bgMusic" loop preload="auto">
+        <source src="bg-music.mp3" type="audio/mpeg">
+    </audio>
+    <button class="music-btn spin" id="musicBtn" onclick="toggleMusic()">🎵</button>
+
+    <script>
+        // Background Hearts
+        const colors = ['#ff8fa3', '#ffb3c1', '#c9184a', '#fff0f3'];
+        for (let i = 0; i < 20; i++) {
+            let heart = document.createElement("div");
+            heart.className = "bg-heart";
+            heart.innerHTML = "&#10084;";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 25 + 10 + "px";
+            heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+            heart.style.animationDuration = Math.random() * 5 + 6 + "s";
+            heart.style.animationDelay = Math.random() * 5 + "s";
+            document.body.appendChild(heart);
+        }
+    </script>
+
+    <canvas id="confetti"></canvas>
+
+    <div id="envelope-wrapper" onclick="openCard()">
+        <div class="envelope-text">For Võ Thúy Hà 💌</div>
+        <img src="bubu-letter.gif" class="envelope-image" alt="Love Letter">
+        <p style="font-family: 'Quicksand', sans-serif; color: #a4133c; margin-top: 15px; font-weight: bold; font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(255,255,255,0.8);">(Tap to open ^^)</p>
+    </div>
+
+    <div class="card-container" id="mainCard">
+        <img src="bubu-main.gif" class="cute-gif" id="mainGif" alt="Cute Bear">
+
+        <h1>Our First Date! 🎉</h1>
+        <h2>To you, Võ Thúy Hà 💖</h2>
+
+        <p>Talking to you has been the sweetest part of my days lately. Thank you for always making me smile with your cuteness and warm energy 🙈.</p>
+        
+        <p>I'd love to finally take you out for our very first date. Let's go enjoy delicious Thai food together tonight! 🍲🥢</p>
+
+        <div class="details-box">
+            <div class="detail-item">
+                <span class="icon">📍</span>
+                <span><strong>Khrua Baan Thai</strong><br>35 Khuc Thua Du, Cau Giay</span>
+            </div>
+            <div class="detail-item">
+                <span class="icon">⏰</span>
+                <span><strong>Tonight</strong> at 7:30 PM!</span>
+            </div>
+        </div>
+
+        <p id="question-text" style="font-size: 1.1rem; color: #a4133c; font-style: italic; font-weight: bold; margin-top: 25px;">Will you go on a date with me? 👉👈</p>
+
+        <div class="button-container" id="action-buttons">
+            <button class="btn btn-yes" onclick="celebrate()">Yes! 💃</button>
+            <button class="btn btn-no" id="btnNo" onmouseover="dodgeButton()" ontouchstart="dodgeButton(event)" onclick="celebrate()">No way 😤</button>
+        </div>
+
+        <div id="love-letter-section">
+            <h2 style="font-family: 'Dancing Script', cursive; color: #c9184a; font-size: 2.2rem; margin-top: 0; text-align: center;">Dearest Thúy Hà,</h2>
+            <p class="love-letter-text">
+                I've been looking forward to this evening for so long. Every little conversation with you brings so much warmth and happiness into my day.<br><br>
+                Tonight is all about good food, cozy stories, and enjoying every moment together. Just bring your prettiest smile and let me take care of everything else.<br><br>
+                Here's to our very first date, and to many more lovely memories ahead!
+            </p>
+        </div>
+
+        <div class="signature">
+            See you tonight,<br>
+            Tung Tran 🐻
+        </div>
+    </div>
+
+    <script>
+        const music = document.getElementById("bgMusic");
+        const musicBtn = document.getElementById("musicBtn");
+        let isMusicPlaying = false;
+
+        function openCard() {
+            document.getElementById("envelope-wrapper").style.display = "none";
+            const card = document.getElementById("mainCard");
+            card.style.display = "block";
+            card.style.animation = "pop-in 0.8s cubic-bezier(0.26, 0.53, 0.74, 1.48) forwards";
+            
+            musicBtn.style.display = "block";
+            
+            try {
+                music.volume = 0.6;
+                let playPromise = music.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        isMusicPlaying = true;
+                    }).catch(error => {
+                        musicBtn.classList.remove("spin");
+                    });
+                }
+            } catch(e) {}
+            
+            addKeyframePopIn();
+        }
+
+        function toggleMusic() {
+            if (isMusicPlaying) {
+                music.pause();
+                musicBtn.classList.remove("spin");
+            } else {
+                music.play();
+                musicBtn.classList.add("spin");
+            }
+            isMusicPlaying = !isMusicPlaying;
+        }
+
+        function addKeyframePopIn() {
+            if (!document.getElementById("dynamic-styles")) {
+                const style = document.createElement('style');
+                style.id = "dynamic-styles";
+                style.innerHTML = `
+                    @keyframes pop-in {
+                        from { opacity: 0; transform: scale(0.8) translateY(30px); }
+                        to { opacity: 1; transform: scale(1) translateY(0); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+
+        // Logic trốn thoát tối ưu cho mobile
+        const btnNo = document.getElementById("btnNo");
+        function dodgeButton(e) {
+            if(e) e.preventDefault(); // Ngăn click nếu là touch
+            
+            // Tính toán khoảng cách trốn thoát nhẹ nhàng để không văng ra ngoài khung
+            const dx = (Math.random() - 0.5) * 150; 
+            const dy = (Math.random() - 0.5) * 100;
+            
+            btnNo.style.position = 'absolute';
+            btnNo.style.transition = 'transform 0.3s ease';
+            btnNo.style.transform = `translate(${dx}px, ${dy}px)`;
+            btnNo.style.zIndex = "100";
+        }
+
+        function celebrate() {
+            document.getElementById("mainGif").src = "bubu-yes.gif";
+            
+            btnNo.style.display = "none";
+            document.getElementById("question-text").style.display = "none";
+            document.getElementById("action-buttons").style.height = "auto";
+            
+            const btnYes = document.querySelector('.btn-yes');
+            btnYes.innerHTML = "Yayyy! I'll pick you up! 😘";
+            btnYes.style.transform = "scale(1.05)";
+            btnYes.style.pointerEvents = "none";
+            btnYes.style.maxWidth = "100%";
+
+            const letterSection = document.getElementById("love-letter-section");
+            letterSection.style.display = "block";
+            
+            setTimeout(() => {
+                const card = document.getElementById('mainCard');
+                card.scrollTo({
+                    top: card.scrollHeight,
+                    behavior: 'smooth'
+                });
+            }, 300);
+            
+            fireConfetti();
+            createLotsOfHearts();
+        }
+
+        function fireConfetti() {
+            const canvas = document.getElementById('confetti');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const particles = [];
+            const colors = ['#ff4d6d', '#ffb3c1', '#c9184a', '#fff0f3', '#ff8fa3', '#ff0a54'];
+
+            for (let i = 0; i < 150; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    size: Math.random() * 8 + 3,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speed: Math.random() * 4 + 2,
+                    angle: Math.random() * Math.PI * 2,
+                    spin: Math.random() * 0.2 - 0.1,
+                    type: Math.random() > 0.4 ? 'heart' : 'circle' 
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let active = false;
+                
+                particles.forEach(p => {
+                    p.y += p.speed;
+                    p.x += Math.sin(p.angle) * 2;
+                    p.angle += p.spin;
+
+                    if (p.y < canvas.height) active = true;
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.angle);
+                    ctx.fillStyle = p.color;
+                    ctx.beginPath();
+                    
+                    if (p.type === 'heart') {
+                        ctx.moveTo(0, 0);
+                        ctx.bezierCurveTo(-p.size/2, -p.size/2, -p.size, p.size/3, 0, p.size);
+                        ctx.bezierCurveTo(p.size, p.size/3, p.size/2, -p.size/2, 0, 0);
+                        ctx.fill();
+                    } else {
+                        ctx.arc(0, 0, p.size/2, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                    ctx.restore();
+                });
+
+                if (active) requestAnimationFrame(animate);
+                else ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+            animate();
+        }
+
+        function createLotsOfHearts() {
+            for(let i=0; i<30; i++) {
+                setTimeout(() => {
+                    let heart = document.createElement("div");
+                    heart.innerHTML = "&#128150;";
+                    heart.style.position = "fixed";
+                    heart.style.left = Math.random() * 100 + "vw";
+                    heart.style.top = "100vh";
+                    heart.style.fontSize = Math.random() * 30 + 20 + "px";
+                    heart.style.zIndex = "200";
+                    heart.style.transition = "all 2s ease-out";
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.style.transform = `translateY(-120vh) rotate(${Math.random() * 360}deg)`;
+                        heart.style.opacity = "0";
+                    }, 50);
+                    
+                    setTimeout(() => { heart.remove(); }, 2000);
+                }, i * 100);
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            const canvas = document.getElementById('confetti');
+            if (canvas) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+        });
+    </script>
+</body>
+</html>
